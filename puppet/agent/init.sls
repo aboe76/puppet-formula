@@ -11,7 +11,7 @@ puppet_agent:
     - installed
     - name: {{ puppet.agent }}
   service:
-    - name: {{ agent.service }}
+    - name: {{ puppet.agentservice }}
     - running
     - enable: True
     - require:
@@ -37,3 +37,4 @@ puppet_agent:
 puppetagent:
   grains.present:
     - value: true
+    - order: 1
